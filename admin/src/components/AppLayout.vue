@@ -1,13 +1,13 @@
 <template>
-    <div class="flex min-h-full">
+    <div class="flex min-h-full bg-gray-100">
         <!-- Sidebar -->
          <Sidebar></Sidebar>
         <!-- Sidebar -->
         <div class="flex-1">
-            <header class="h-8 bg-white shadow">Header</header>
+            <TopHeader></TopHeader>
             <!-- Content -->
 
-            <main>
+            <main class="p-6">
                 <router-view></router-view>
             </main>
             <!-- Content -->
@@ -16,6 +16,8 @@
 </template>
 <script setup>
 import Sidebar from './Sidebar.vue';
+import TopHeader from './TopHeader.vue';
+
 const { title } = defineProps({
     title: String,
 });
