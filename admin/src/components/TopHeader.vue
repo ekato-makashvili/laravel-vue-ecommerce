@@ -1,17 +1,14 @@
 <template>
-    <header class="flex h-14 items-center justify-between bg-white shadow">
-        <button class="p-4 text-gray-700">
-            <MenuIcon />
+    <header class="flex h-14 items-center justify-between bg-white shadow p-4">
+        <button @click="emit('toggle-sidebar')" class="flex items-center justify-center rounded transition-colors w-8 h-8 text-gray-700 hover:bg-black/10">
+            <MenuIcon class="w-6"/>
         </button>
-        <div class="px-4">
             <Menu as="div" class="relative inline-block text-left">
-                <div>
                     <MenuButton class="flex items-center">
                         <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="" class="mr-2 w-8 rounded-full" />
                         <small>Anna Smith</small>
                         <ChevronDownIcon class="h-5 w-5 text-violet-200 hover:text-violet-100" aria-hidden="true" />
                     </MenuButton>
-                </div>
 
                 <transition
                     enter-active-class="transition duration-100 ease-out"
@@ -51,7 +48,6 @@
                     </MenuItems>
                 </transition>
             </Menu>
-        </div>
     </header>
 </template>
 <script setup>
@@ -59,6 +55,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import { ChevronDownIcon} from '@heroicons/vue/20/solid';
 import { UserIcon } from '@heroicons/vue/24/outline';
 import { MenuIcon, LogOutIcon } from 'lucide-vue-next';
+
+const emit = defineEmits(['toggle-sidebar'])
 </script>
 
 <style scoped></style>
