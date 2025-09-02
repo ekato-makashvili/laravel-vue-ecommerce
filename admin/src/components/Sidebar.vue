@@ -12,7 +12,7 @@
             </span>
             <span class="text-xs"> Products </span>
         </router-link>
-        <router-link :to="{ name: 'app.dashboard' }" class="flex items-center rounded p-2 font-light transition-colors hover:bg-black/20">
+        <router-link :to="{ name: 'app.products' }" class="flex items-center rounded p-2 font-light transition-colors hover:bg-black/20">
             <span class="mr-2 text-gray-300">
                 <UsersIcon class="w-4" />
             </span>
