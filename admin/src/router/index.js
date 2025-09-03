@@ -6,6 +6,7 @@ import ResetPassword from '../views/ResetPassword.vue';
 import AppLayout from '../components/AppLayout.vue';
 import Products from '../views/Products.vue';
 import store from '../store';
+import NotFound from '../views/NotFound.vue';
 
 const routes = [
     {
@@ -31,27 +32,35 @@ const routes = [
         {
         path: '/login',
         name: 'login',
+        component: Login,
         meta: {
             requiresGuest: true
         },
-        component: Login
+        
     },
       {
         path: '/request-password',
         name: 'requestPassword',
+        component: RequestPassword,
         meta: {
             requiresGuest: true
         },
-        component: RequestPassword
+        
     },
     ,
       {
         path: '/reset-password/:token',
         name: 'resetPassword',
+        component: ResetPassword,
         meta: {
             requiresGuest: true
         },
-        component: ResetPassword
+        
+    },
+          {
+        path: '/:pathMatch(.*)',
+        name: 'notFound',
+        component: NotFound
     }
 ];
 
